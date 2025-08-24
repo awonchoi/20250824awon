@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청소 당번 뽑기</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="bg-gradient-to-br from-purple-600 via-blue-600 to-teal-500 min-h-screen">
+  <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100 p-4">
+    <div class="card shadow-2xl border-0 rounded-4 overflow-hidden max-w-lg w-100" style="backdrop-filter: blur(16px); background: rgba(255, 255, 255, 0.95);">
+      
+      <!-- Header -->
+      <div class="card-header bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-center py-4 border-0">
+        <h1 class="h3 mb-2 font-weight-bold">
+          <i class="fas fa-broom me-2"></i>
+          청소 당번 뽑기
+        </h1>
+        <p class="mb-0 opacity-90">
+          <i class="fas fa-users me-1"></i>
+          1번부터 24번 중에서 5명을 랜덤으로 선택
+        </p>
+      </div>
+      
+      <!-- Body -->
+      <div class="card-body p-5 text-center">
+        
+        <!-- Statistics Cards -->
+        <div class="row g-3 mb-4">
+          <div class="col-4">
+            <div class="card bg-light border-0 h-100">
+              <div class="card-body py-3">
+                <i class="fas fa-users text-primary h4 mb-1"></i>
+                <div class="fw-bold text-muted small">총 인원</div>
+                <div class="h5 mb-0 text-primary">24명</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card bg-light border-0 h-100">
+              <div class="card-body py-3">
+                <i class="fas fa-hand-point-up text-success h4 mb-1"></i>
+                <div class="fw-bold text-muted small">선택 인원</div>
+                <div class="h5 mb-0 text-success">5명</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card bg-light border-0 h-100">
+              <div class="card-body py-3">
+                <i class="fas fa-percentage text-warning h4 mb-1"></i>
+                <div class="fw-bold text-muted small">확률</div>
+                <div class="h5 mb-0 text-warning">21%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Draw Button -->
+        <button id="drawButton" class="btn btn-lg btn-primary px-5 py-3 rounded-pill shadow-lg mb-4 position-relative overflow-hidden">
+          <span class="btn-text">
+            <i class="fas fa-dice me-2"></i>
+            당번 뽑기!
+          </span>
+          <div class="spinner-border spinner-border-sm ms-2 d-none" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </button>
+        
+        <!-- Results Section -->
+        <div id="result" class="result-container d-none">
+          <div class="alert alert-success border-0 rounded-3 mb-4">
+            <i class="fas fa-check-circle me-2"></i>
+            <strong>선택 완료!</strong> 아래 번호들이 당번으로 선정되었습니다.
+          </div>
+          
+          <div class="row g-2" id="numbers">
+            <!-- 번호들이 여기에 동적으로 추가됩니다 -->
+          </div>
+          
+          <button id="shareButton" class="btn btn-outline-primary btn-sm mt-3 rounded-pill">
+            <i class="fas fa-share me-1"></i>
+            결과 공유하기
+          </button>
+        </div>
+        
+      </div>
+      
+      <!-- Footer -->
+      <div class="card-footer bg-light border-0 text-center py-3">
+        <small class="text-muted">
+          <i class="fas fa-magic me-1"></i>
+          랜덤 추첨으로 공정하게 선택됩니다
+        </small>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

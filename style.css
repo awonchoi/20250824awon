@@ -1,0 +1,191 @@
+
+/* 커스텀 폰트 */
+body {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* 배경 그라데이션 애니메이션 */
+body {
+  background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 카드 글래스모피즘 효과 */
+.card {
+  backdrop-filter: blur(20px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.125) !important;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 헤더 그라데이션 */
+.card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* 버튼 스타일링 */
+#drawButton {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24, #feca57) !important;
+  border: none !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(0);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4) !important;
+}
+
+#drawButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6) !important;
+  background: linear-gradient(45deg, #ee5a24, #ff6b6b, #feca57) !important;
+}
+
+#drawButton:active {
+  transform: translateY(-1px);
+}
+
+/* 버튼 로딩 애니메이션 */
+#drawButton.loading {
+  pointer-events: none;
+  background: linear-gradient(45deg, #95a5a6, #7f8c8d) !important;
+}
+
+/* 번호 카드 스타일 */
+.number-card {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border: none !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.number-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(79, 172, 254, 0.4) !important;
+}
+
+.number-card .card-body {
+  padding: 1.5rem !important;
+}
+
+.number-display {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.number-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* 결과 애니메이션 */
+.result-container {
+  animation: slideUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 번호 카드 등장 애니메이션 */
+.number-card {
+  animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 통계 카드 호버 효과 */
+.card.bg-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease;
+}
+
+/* 알림 스타일 */
+.alert-success {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%) !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 500;
+}
+
+/* 공유 버튼 */
+#shareButton {
+  transition: all 0.3s ease;
+}
+
+#shareButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 576px) {
+  .card-body {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .number-display {
+    font-size: 1.5rem;
+  }
+  
+  #drawButton {
+    padding: 12px 24px !important;
+    font-size: 0.95rem;
+  }
+}
+
+/* 스크롤바 커스터마이징 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
+
+/* 포커스 스타일 */
+.btn:focus, .card:focus {
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25) !important;
+}
